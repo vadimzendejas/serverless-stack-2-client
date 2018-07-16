@@ -1,0 +1,12 @@
+version: 0.1
+phases:
+  install:
+    commands:
+      - npm install
+  build:
+    commands:
+      - REACT_APP_STAGE=dev npm run build 
+  post_build:
+    commands:
+      - aws s3 sync build/ s3://notes-app-client --delete
+      - aws cloudfront create-invalidation --distribution-id E1KTCKT9SOAHBW --paths '/*' && aws cloudfront create-invalidation --distribution-id E3MQXGQ47VCJB0 --paths '/*'
