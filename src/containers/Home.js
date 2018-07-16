@@ -69,10 +69,10 @@ export default class Home extends Component {
         <p>A simple note taking app</p>
         <div>
           <Link to="/login" className="btn btn-info btn-lg">
-            Login
+            Login Here
           </Link>
           <Link to="/signup" className="btn btn-success btn-lg">
-            Signup
+            Signup Here
           </Link>
         </div>
       </div>
